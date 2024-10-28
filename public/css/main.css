@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+      
+}
+
+:root{
+    --socialsWidth: 41px;
+    --fontSizeNav: 24px;
+    --headerColor: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden; /* Prevents horizontal scroll if background goes beyond viewport */
+}
+
+body::before {
+    content: "";
+    position: absolute; /* Keeps the background fixed on the viewport */
+    top: -10px;
+    left: -10px;
+    width: 110% ;
+    height: 110%;
+    /* background: url('/images/bg_body.jpg');  */
+    background: url('/images/body_XL.jpg'); 
+    background-repeat: repeat-x;
+    background-position: center / cover;
+    background-size: cover;
+    z-index: -1; /* Places the background behind content */
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+
+    font-size: var(--fontSizeNav);
+    text-transform: uppercase;
+}
+
+.logo{
+    width: 200px;
+    height: auto;
+}
+
+nav{
+    display: flex;
+    gap: 30px;
+    
+}
+
+nav a {
+    color: var(--headerColor);
+    text-decoration: none;
+}
+
+.contact_info{
+    color: var(--headerColor);
+    text-decoration: none;
+}
+
+.contact_info > *{
+    padding: 5px;
+}
+
+.socials img{
+    width: var(--socialsWidth);
+}
+
+.active{
+    border-bottom: #000000 solid 5px;
+}
+
+@media (max-width: 1000px) {
+    .contact_info{
+        display: none;
+    }
+}
