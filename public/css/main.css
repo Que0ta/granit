@@ -247,3 +247,63 @@ nav a {
     }
 }
 
+
+
+/* dropdown */
+
+/* General dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Positioning below the "Каталог" */
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.59);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    z-index: 1;
+    flex-direction: column;
+    transition: opacity 0.3s ease; /* Smooth show/hide */
+    opacity: 0;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: rgb(255, 197, 71);
+}
+
+/* Show dropdown content on hover for larger screens */
+@media (min-width: 800px) {
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+/* Show dropdown on click for smaller screens */
+@media (max-width: 799px) {
+    .dropdown > a::after {
+        content: " ▼"; /* Indicator for dropdown */
+    }
+
+    /* Adjust dropdown content display */
+    .dropdown-content {
+        position: static; /* Inline with the menu */
+        display: none;
+        opacity: 1;
+    }
+
+    /* Toggle dropdown on click using the :focus-within pseudo-class */
+    .dropdown:focus-within .dropdown-content {
+        display: flex;
+    }
+}
