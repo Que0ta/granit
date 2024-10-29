@@ -121,7 +121,7 @@ nav a {
     .navbar-adaptive{
         display: flex;
     }
-
+    
 }
 
 .modal-nav {
@@ -150,6 +150,7 @@ nav a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: var(--fontSizeNav);
+
 }
 
 .close-btn {
@@ -246,3 +247,4 @@ nav a {
         padding: 1rem;
     }
 }
+
