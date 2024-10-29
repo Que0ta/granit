@@ -8,11 +8,14 @@
     --fontSizeNav650: 12px;
     --headerColor: #000000;
 
+    --headersSections: 35px;
+
     --aboutSize: 28px;
     --H1Size620: 24px;
     --paragraphSize: 16px;
     --buttonSize620: 22px;
 }
+
 
 * {
     margin: 0;
@@ -23,25 +26,26 @@
     font-style: normal;
 }
 
-body {
+html, body {
     margin: 0;
     padding: 0;
-    position: relative;
-    overflow-x: hidden; /* Prevents horizontal scroll if background goes beyond viewport */
-    width: 100vw; /* Ensures body width matches viewport width */
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
 }
 
+/* Positioning for the body background */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed; /* Fixed positioning ensures it stays anchored to the viewport */
     top: 0;
     left: 0;
-    width: 100vw; /* Aligns with viewport width */
-    height: 110vh;
+    width: 100%; /* Full viewport width */
+    height: 100%; /* Full viewport height */
     background: url('/images/body_XL.jpg');
-    background-repeat: repeat-x;
-    background-position: center / cover;
+    /* background-position: center / cover; */
     background-size: cover;
+    background-attachment: scroll;
     z-index: -1; /* Places the background behind content */
 }
 
@@ -101,7 +105,7 @@ nav a {
     border-bottom: #000000 solid 5px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1190px) {
     .contact_info{
         display: none;
     }
@@ -251,8 +255,7 @@ nav a {
 
 
 /* dropdown */
-
-/* General dropdown styling */
+/*  */
 .dropdown {
     position: relative;
 }
@@ -307,4 +310,61 @@ nav a {
     .dropdown:focus-within .dropdown-content {
         display: flex;
     }
+}
+
+/* Categories and others */
+
+.categories{
+    padding: 150px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.categories h2, .service h2{
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+
+    font-size: var(--headersSections);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width: 266.61px;
+    height: 300.9px;
+
+
+    background: rgba(217, 217, 217, 0.45);
+    box-shadow: 6px 6px 17.5px rgba(0, 0, 0, 0.83);
+    border-radius: 50px;
+
+}
+
+.item img{
+    width: 120px;
+    height: 130px;
+}
+
+.item p{
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+
+
 }
