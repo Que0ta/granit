@@ -1,13 +1,14 @@
 
 :root{
     --socialsWidth: 41px;
-    --fontSizeModal: 28px;
+    --fontSizeModal: 16px;
     --fontSizeNav: 24px;
     --fontSizeNav1000: 20px;
     --fontSizeNav800: 14px;
     --fontSizeNav650: 12px;
     --headerColor: #000000;
 
+    --aboutSize: 28px;
     --H1Size620: 24px;
     --paragraphSize: 16px;
     --buttonSize620: 22px;
@@ -180,7 +181,7 @@ nav a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: var(--fontSizeModal);
+    font-size: var(--aboutSize);
     overflow-x: hidden; /* Prevents overflow from inside .about */
     text-align: center;
 }
