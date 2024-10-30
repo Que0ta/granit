@@ -14,6 +14,8 @@
     --H1Size620: 24px;
     --paragraphSize: 16px;
     --buttonSize620: 22px;
+
+    --elementFontSize: 26px;
 }
 
 
@@ -43,6 +45,7 @@ body::before {
     width: 100%; /* Full viewport width */
     height: 100%; /* Full viewport height */
     background: url('/images/body_XL.jpg');
+    /* background: url('/images/tested/body_bg.jpg'); */
     /* background-position: center / cover; */
     background-size: cover;
     background-attachment: scroll;
@@ -323,7 +326,7 @@ nav a {
     flex-direction: column;
 }
 
-.categories h2, .service h2{
+.categories h2, .service h2, .advantages h2{
     margin-bottom: 3rem;
     text-transform: uppercase;
     text-align: center;
@@ -362,8 +365,133 @@ nav a {
     height: 130px;
 }
 
-.item p{
+.item p, .element p, .elementy p{
     color: rgb(0, 0, 0);
     text-transform: uppercase;
+
+}
+
+/* Послуги */
+.service, .advantages{
+    padding: 0 0 150px 0;
+}
+
+.elements-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 90px;
+
+    background: rgba(217, 217, 217, 0.45);
+    box-shadow: 6px 6px 17.5px rgba(0, 0, 0, 0.83);
+    
+    margin: 0 3.5rem;
+    padding: 3rem 0;
+
+}
+
+.element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--elementFontSize);
+    text-align: center;
+    flex-direction: column;
+}
+
+.element img{
+    width: 170px;
+    height: 130px;
+}
+
+/* Advantages */
+
+.advantages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.advantages-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 90px;
+
+    background: rgba(217, 217, 217, 0.45);
+    box-shadow: 6px 6px 17.5px rgba(0, 0, 0, 0.83);
+    border-radius: 25px;
+    padding: 2rem 3rem;
+    margin: 0 1.5rem;
+}
+
+.elementy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-direction: column;
+
+    font-size: var(--elementFontSize);
+    text-align: center;
+}
+
+.image{
+    width: 150px;
+    height: 140px;
+    position: relative;
+}
+
+.image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* footer */
+/*  */
+
+footer{
+    /* footer */
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2rem 3rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    
+}
+
+footer > *{
+    padding: 0 15px;
+}
+
+@media (max-width: 530px) {     
+    footer > *{
+        margin: 0 auto 40px auto;
+    }
+
+    footer a{
+        margin: 0 auto 0 auto !important;
+    }
+}
+
+.contact_info_footer{
+    color: white;
+    font-size: var(--fontSizeNav);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
 }
