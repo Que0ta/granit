@@ -1,0 +1,31 @@
+/* Active state for the navigation link */
+nav a.active {
+    border-bottom: #000000 solid 5px;
+    transition: border-bottom 0.5s ease, transform 0.5s ease;
+}
+
+/* Remove active style and apply a new style on hover */
+nav:hover a.active {
+    border-bottom: none;
+}
+
+/* Hover effect for individual <a> elements */
+nav a {
+    transition: border-bottom 0.5s ease, transform 0.5s ease;
+}
+
+nav a:hover {
+    border-bottom: #000000 solid 5px;
+    transform: scale(1.1);
+}
+
+/* Hover effect specifically for the active link */
+nav a.active:hover {
+    border-bottom: #000000 solid 5px;
+    transform: scale(1.1);
+}
+
+/* Remove border effect for dropdown links */
+.dropdown a:hover {
+    border: none;
+}

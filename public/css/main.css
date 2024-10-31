@@ -1,6 +1,8 @@
 
 :root{
     --socialsWidth: 41px;
+    --socialsSmall: 26px;
+
     --fontSizeModal: 16px;
     --fontSizeNav: 24px;
     --fontSizeNav1000: 20px;
@@ -16,6 +18,8 @@
     --buttonSize620: 22px;
 
     --elementFontSize: 26px;
+
+    --footerSmall: 16px;
 }
 
 
@@ -122,6 +126,7 @@ nav a {
     .logo{
         width: 140px;
     }
+
 }
 
 @media (max-width: 800px) {
@@ -273,6 +278,8 @@ nav a {
     min-width: 150px;
     z-index: 1;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: opacity 0.3s ease; /* Smooth show/hide */
     opacity: 0;
 }
@@ -388,9 +395,22 @@ nav a {
     background: rgba(217, 217, 217, 0.45);
     box-shadow: 6px 6px 17.5px rgba(0, 0, 0, 0.83);
     
-    margin: 0 3.5rem;
+    margin: 0 2rem;
     padding: 3rem 0;
 
+}
+
+.ryadok1, .ryadok2{
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 556px){
+    .ryadok1, .ryadok2{
+        flex-direction: column;
+    }
 }
 
 .element{
@@ -477,7 +497,7 @@ footer > *{
     padding: 0 15px;
 }
 
-@media (max-width: 530px) {     
+@media (max-width: 656px) {     
     footer > *{
         margin: 0 auto 40px auto;
     }
@@ -485,7 +505,30 @@ footer > *{
     footer a{
         margin: 0 auto 0 auto !important;
     }
+
+    .footer_info{
+        text-align: center;
+    }
 }
+
+@media (max-width: 922px) { 
+    footer{
+        flex-direction: column-reverse;
+    }
+
+    .footer_info{
+        text-align: center;
+    }
+    
+    footer > *{
+        margin: 0 auto 40px auto;
+    }
+
+    .logo{
+        width: 170px;
+    }
+}
+
 
 .contact_info_footer{
     color: white;
@@ -493,5 +536,43 @@ footer > *{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    
+}
 
+@media (max-width: 1050px){
+    .contact_info_footer{
+        gap: 10px;
+    }
+}
+
+.footer_info{
+    color: white;
+    font-size: var(--fontSizeNav);
+    display: flex;
+    flex-direction: column;
+}
+
+.copyright{
+    background: rgba(0, 0, 0, 0.75);
+    color: rgb(182, 182, 182);
+    text-align: center;
+    padding: 2rem 3rem;
+}
+
+@media (max-width: 490px){
+    .logo{
+        width: 110px;
+    }
+
+    .contact_info_footer, .footer_info{
+        font-size: var(--footerSmall);
+    }
+
+    .socials img{
+        width: var(--socialsSmall);
+    }
+
+    .modal-nav .contact_info img{
+        width: var(--socialsWidth);
+    }
 }
