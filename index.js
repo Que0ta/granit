@@ -13,6 +13,10 @@ app.get('/information', (req,res) => {
     res.render('information.ejs');
 });
 
+app.get('/contacts', (req,res) => {
+    res.render('contacts.ejs');
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

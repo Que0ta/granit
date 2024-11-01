@@ -580,7 +580,7 @@ footer > *{
     }
 }
 
-/* Information PAGE */
+/* Information and contacts PAGE */
 .information{
     padding: 5em 2em;
     margin: 0 0.5rem;
@@ -597,22 +597,114 @@ footer > *{
     text-transform: uppercase;
 }
 
-.question h3{
+.question h3, .contactos h3, .location h2{
     font-size: var(--questionSizeHeader);
     text-transform: uppercase;
     margin-bottom: 1.2rem;
 }
 
-.information h3 {
+.information h3, .contactos h3 {
     font-size: clamp(16px, 4vw, 32px); /* Flexible size between 24px and 36px */
 }
 
-.information h2 {
+.information h2, .contactos h2, .location h2 {
     font-size: clamp(20px, 4vw, 36px); /* Flexible size between 24px and 36px */
 }
 
-.information .que_text p {
+.information .que_text p, .contactos .grid-items p {
     color: white;
     font-size: clamp(10px, 2.5vw, 28px); /* Flexible size between 20px and 28px */
 }
+/* div contactos */
+.contactos{
+    padding: 2.34rem;
+    margin-top: 3rem;
+    margin-bottom: 2.2rem;
+    font-size: var(--questionSizeParagraph);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+/*  */
+/*  */
+.contactos h2, .location h2{
+    text-align: center;
+}
 
+.start-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    /* height: 300px; */
+}
+
+.box1, .box2, .box3 {
+    background: rgba(217, 217, 217, 0.45);
+    box-shadow: 4px 4px 25.2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box1, .box2{
+    align-items: flex-start;
+    padding: 2.2rem 1.3rem;
+}
+
+.box3{
+    justify-content: center;
+    align-items: center;
+    padding: 2.2rem 1.3rem;
+}
+
+.start-grid .box3 p{
+    font-size: clamp(20px, 2.5vw, 36px);
+}
+
+
+.box1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.box2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.box3 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .start-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .box3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
+
+/* location */
+.location{
+    margin: 2rem 0 2rem 0;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location iframe {
+    width: clamp(300px, 50%, 600px);
+    height: 200px;
+}
