@@ -1,0 +1,87 @@
+.cardGallery {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 460px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main display image */
+.shown-picture {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Carousel container */
+.carousel {
+    display: flex;
+    justify-content: center; /* Centers the thumbnails */
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+/* Carousel images - resized to 100x100 */
+.carousel-image {
+    width: 100px !important; /* Forces width */
+    height: 100px !important; /* Forces height */
+    object-fit: cover;
+    flex: 0 0 auto; /* Prevents images from stretching */
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.carousel-image:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Arrows for carousel */
+.carousel-arrows {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.arrow-left, .arrow-right {
+    font-size: 24px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    background-color: rgba(99, 99, 99, 0.8);
+    color: #fff;
+}
+
+/* Left and Right Arrow Positioning */
+.arrow-left {
+    margin-left: 10px;
+}
+
+.arrow-right {
+    margin-right: 10px;
+}
+
+/* Carousel and arrows hidden initially (optional) */
+.carousel[hidden], .carousel-arrows[hidden] {
+    display: none;
+}

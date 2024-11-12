@@ -1,0 +1,70 @@
+<%- include("components/header.ejs") %>
+        <div class="cardItem">
+            <div class="cardGallery">
+                <img class="shown-picture" src="https://www.benchmarkemail.com/wp-content/uploads/2024/04/Places-to-Find-Email-Template-Images.jpg" alt="">
+                <div class="carousel">
+                    <span class="arrow-left"><img src="/images/left.png" /></span>
+                    <div class="slider">
+                        <img class="carousel-image chosen" src="" alt="Thumbnail 1">
+                        <img class="carousel-image" src="" alt="Thumbnail 2">
+                        <img class="carousel-image reduce" src="" alt="Thumbnail 3">
+                    </div>
+                    <span class="arrow-right"><img src="/images/right.png" /></span>
+                </div>
+            </div>
+
+            <div class="cardDetails">
+                <h1>Пам'ятник <%= type %></h1>
+                <h2 class="number">Номер: #<%= number %></h2>
+                <!-- <h2>характеристики:</h2>
+                <div class="characteristics">
+                    <p>Колір:</p>
+                    <p>Матеріал:</p>
+                </div> -->
+                <div class="itemData">
+                    <div class="characteristics">
+                      <h3>ХАРАКТЕРИСТИКИ:</h3>
+                      <p>КОЛІР: <span>######</span></p>
+                      <p>МАТЕРІАЛ: <span>######</span></p>
+                    </div>
+
+                    <!-- <div> </div> -->
+                  
+                    <div class="extras">
+                      <h3>ДОДАТКИ:</h3>
+                      <ul>
+                        <li>ВАЗА</li>
+                        <li>ПІДСВІЧНИК</li>
+                        <li>ІНШЕ ...</li>
+                      </ul>
+                    </div>
+                  
+                    <div class="dimensions">
+                      <h3>РОЗМІРИ:</h3>
+                      <p>ШИРИНА: <%= width %> см</p>
+                      <p>ВИСОТА: <%= height %> см</p>
+                      <p>ДОВЖИНА: <%= length %> см</p>
+                    </div>
+
+                    <div class="producing">
+                        <h3>термін виготовлення:</h3>
+                        <p>сезон (березень-жовтень) - 30 днів </p>
+                        <p>несезон (листопад-лютий) - 15 днів</p>
+                    </div>    
+                </div>
+
+                <div class="downer">
+                    <h3>термін доставки:</h3>
+                    <p>15-30 днів по Україні</p>
+                </div>
+                <div class="downer">
+                    <h3>ціна:</h3>
+                    <p class="number price"><%= price %> <span style="text-transform: lowercase;">грн<span></p>
+                </div>
+                <div class="buttons">
+                    <a class="buy" href="">замовити</a>
+                    <a class="instruction" href="">послідовність роботи</a>
+                </div>
+            </div>
+        </div>
+<%- include("components/footer.ejs") %>

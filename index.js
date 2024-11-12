@@ -17,6 +17,10 @@ app.get('/contacts', (req,res) => {
     res.render('contacts.ejs');
 });
 
+app.get('/catalog', (req,res) => {
+    res.render('card.ejs', {number: 1, type: 'одинарний', price: '50 000', length: '190', width: '200', height: '170'});
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
