@@ -9,6 +9,7 @@ const imageUrls = [
     // add more images if needed
 ];
 
+
 // Select necessary elements
 const carouselImages = document.querySelectorAll('.carousel-image');
 const leftArrow = document.querySelector('.arrow-left');
