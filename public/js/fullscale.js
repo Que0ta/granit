@@ -25,7 +25,7 @@ zoomControlsContainer.classList.add('zoom-controls-container');
 // Create the close button ("X")
 const closeBtn = document.createElement('button');
 closeBtn.textContent = 'X';
-closeBtn.classList.add('close-btn');
+closeBtn.classList.add('close');
 
 // Append buttons to the controls container
 zoomControlsContainer.appendChild(zoomInBtn);
