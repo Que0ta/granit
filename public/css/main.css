@@ -114,6 +114,12 @@ nav a {
     padding: 5px;
 }
 
+.socials{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
 .socials img{
     width: var(--socialsWidth);
 }
@@ -370,7 +376,7 @@ nav a {
     align-items: center;
 
     flex-direction: column;
-
+    gap: 30px;
     width: 266.61px;
     height: 300.9px;
 
@@ -382,8 +388,8 @@ nav a {
 }
 
 .item img{
-    width: 120px;
-    height: 130px;
+    width: 200px;
+    height: 150px;
 }
 
 .item p, .element p, .elementy p{
@@ -719,3 +725,21 @@ footer > *{
     width: clamp(300px, 50%, 600px);
     height: 200px;
 }
+
+.map{
+    border: 1px solid rgb(255, 203, 46);
+    animation: blink 3s linear infinite;
+    border-radius: 5px;
+    transition: 0.3s all linear;
+}
+
+@keyframes blink {
+    from{
+        border: none;
+    }
+    
+    to{
+        border: 5px solid rgb(255, 203, 46);
+    }
+}
+

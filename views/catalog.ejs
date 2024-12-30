@@ -1,4 +1,43 @@
 <%- include("components/header.ejs") %>
+    <div class="catalog-header">
+        <select class="filter" name="filter" onchange="this.form.submit()">
+            <option value="all" selected>Всі категорії</option>
+            <option value="uno">Одинарний</option>
+            <option value="double">Подвійний</option>
+            <option value="triple">Потрійний</option>
+            <option value="child">Дитячий</option>
+            <option value="others">Інші вироби</option>
+        </select>
+    </div>
+    <div class="item-prod">
+        <% data.forEach(function(product) { %>
+                <div class="product" data-type="<%= product.height %>">
+                    <div class="product-info">
+                        <img src="https://items-images-bucket.s3.eu-north-1.amazonaws.com/<%= (product.photos && product.photos.includes(',')) 
+                        ? product.photos.split(',')[0] 
+                        : (product.photos || 'placeholder.jpg') %>" alt="Фото">
+                        <div class="pro-text">
+                            <p class="articul-text"><strong>Артикул:</strong>  <%= product.articul %></p>
+                            <p class="name-text pricey-text"> <%= product.price %> грн</p>
+                        </div>
+                        <button class="detail-btn">Детальніше</button>
+                    </div>
+                </div>
+        <% }); %>
+    </div>
+    <script>
+        document.querySelector('.filter').addEventListener('change', function () {
+            const filterValue = this.value; // Get the selected filter value
+            const products = document.querySelectorAll('.product'); // Get all products
 
-
+            products.forEach(product => {
+                const productType = product.getAttribute('data-type'); // Get product's type from data-type
+                if (filterValue === 'all' || productType === filterValue) {
+                    product.style.display = ''; // Show product
+                } else {
+                    product.style.display = 'none'; // Hide product
+                }
+            });
+        });
+    </script>
 <%- include("components/footer.ejs") %>

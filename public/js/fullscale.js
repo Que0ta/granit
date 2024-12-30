@@ -32,7 +32,6 @@ zoomControlsContainer.appendChild(zoomInBtn);
 zoomControlsContainer.appendChild(zoomOutBtn);
 zoomControlsContainer.appendChild(closeBtn);
 
-
 // Append the full-screen image, zoom controls container, and close button to the fullscreen container
 fullscreenContainer.appendChild(fullscreenImg);
 fullscreenContainer.appendChild(zoomControlsContainer);
