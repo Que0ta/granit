@@ -273,6 +273,10 @@
     
 }
 
+.lower-card .addition{
+    margin-bottom: 3rem;
+}
+
 .addition h3{
     text-transform: uppercase;
 }
@@ -287,7 +291,7 @@
     background: rgba(85, 85, 85, 0.55);
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: first baseline;
     flex-direction: column;
 }
 
@@ -381,4 +385,21 @@
   
 .close:hover {
     background-color: rgba(255, 80, 80, 0.7);
+}
+
+.itemData .addition{
+    padding: 1rem 0.2rem;
+}
+
+.itemData .addition h3{
+    color: black;
+}
+
+.itemData{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.no-bg{
+    background-color: none !important;
 }

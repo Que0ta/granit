@@ -51,9 +51,31 @@ app.get('/catalog', async(req,res) => {
     res.render('catalog.ejs', {data});
 });
 
-// app.get('/catalog', (req,res) => {
-//     res.render('card.ejs', {number: 1, type: 'одинарний', price: '50 000', length: '190', width: '200', height: '170'});
-// });
+app.post('/detail', (req, res) => {
+    const productId = req.body.checkID; // Get the product ID from the form
+    res.redirect(`/detail/${productId}`); // Redirect to GET route with ID in the URL
+});
+
+// GET route to display the detail page
+app.get('/detail/:id', async (req, res) => {
+    const productId = req.params.id; // Get the product ID from the URL
+    const result = await getItemById(productId);
+
+    res.render('card.ejs', {
+        name: result.name,
+        id: result.id,
+        height: result.height,
+        width: result.width,
+        length: result.length,
+        articul: result.articul,
+        price: result.price,
+        components: result.components,
+        extra_costs: result.extra_costs,
+        extra_cost_values: result.extra_cost_values,
+        photos: result.photos
+    });
+});
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

@@ -22,11 +22,11 @@
                 <div class="dropdown">
                     <a id="catalog-link" href="/catalog">Каталог</a>
                     <div class="dropdown-content">
-                        <a href="#">Одинарні</a>
-                        <a href="#">Подвійні</a>
-                        <a href="#">Потрійні</a>
-                        <a href="#">Дитячі</a>
-                        <a href="#">Інші</a>
+                        <a href="#" onclick="filterCatalog('uno')">Одинарні</a>
+                        <a href="#" onclick="filterCatalog('double')">Подвійні</a>
+                        <a href="#" onclick="filterCatalog('triple')">Потрійні</a>
+                        <a href="#" onclick="filterCatalog('child')">Дитячі</a>
+                        <a href="#" onclick="filterCatalog('others')">Інші</a>
                     </div>
                 </div>
                 <a href="/contacts">Контакти</a>
@@ -45,11 +45,11 @@
                     <div class="dropdown">
                         <a id="catalog-link" href="/catalog">Каталог</a>
                         <div class="dropdown-content">
-                            <a href="#">Одинарні</a>
-                            <a href="#">Подвійні</a>
-                            <a href="#">Потрійні</a>
-                            <a href="#">Дитячі</a>
-                            <a href="#">Інші вироби</a>
+                            <a href="#" onclick="filterCatalog('uno')">Одинарні</a>
+                            <a href="#" onclick="filterCatalog('double')">Подвійні</a>
+                            <a href="#" onclick="filterCatalog('triple')">Потрійні</a>
+                            <a href="#" onclick="filterCatalog('child')">Дитячі</a>
+                            <a href="#" onclick="filterCatalog('others')">Інші вироби</a>
                         </div>
                     </div>
                     <a href="/contacts">Контакти</a>
@@ -80,5 +80,10 @@
         </header>
         <!--  -->
         <!--  -->
-        
+        <script>
+            function filterCatalog(filterValue) {
+            // Redirect to the catalog page with the filter parameter
+            window.location.href = `/catalog?filter=${filterValue}`;
+        }
+        </script>
         <main>

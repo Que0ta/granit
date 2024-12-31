@@ -1,14 +1,28 @@
-// Image array (you can replace this with actual URLs)
-const imageUrls = [
-    'https://media.istockphoto.com/id/1156520822/vector/photo-collage-frame-for-photos-pictures-parts-illustrations-mood-board-concept-template.jpg?s=612x612&w=0&k=20&c=iW74rQO28CozEoFYndU2LBtf5gTqssG5qnmQLelCxVc=',
-    '/images/tested/temp2.jpg',
-    '/images/tested/temp3.jpg',
-    '/images/tested/temp1.jpg',
-    'https://t4.ftcdn.net/jpg/09/62/19/17/360_F_962191716_RSfMqefQ9AbPpqCIqrUqTPKqTpaGbVXw.jpg',
-    // 'https://img.avery.com/f_auto,q_auto,c_scale,w_300/web/templates/line-art/5168',
-    // add more images if needed
-];
 
+const photoData = document.getElementById('photos-data').value;
+let imageUrls = [];
+try {
+    let testSpisok = JSON.parse(photoData); // Parse the string back to an array
+    testSpisok = testSpisok.split(',');
+    // Ensure imageUrls is always an array
+    if (!Array.isArray(testSpisok)) {
+        testSpisok = [testSpisok]; // If it's not an array, convert it into an array
+    }
+    
+    // Check if there are multiple images and prepend a path if necessary
+    if (testSpisok.length > 0) {
+        const basePath = 'https://items-images-bucket.s3.eu-north-1.amazonaws.com/'; 
+        
+        testSpisok = testSpisok.map((url) => {
+            return `${basePath}${url}`;
+        });
+        imageUrls = testSpisok;
+    } else {
+        console.warn('No valid images found.');
+    }
+} catch (error) {
+    console.error('Error parsing photo data:', error);
+}
 
 // Select necessary elements
 const carouselImages = document.querySelectorAll('.carousel-image');

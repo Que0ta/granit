@@ -10,27 +10,28 @@
         <div class="categories">
             <h2>Категорії виробів</h2>
             <div class="menu">
-                <div class="item">
+                <div class="item" onclick="filterCatalog('uno')">
                     <img src="/images/main_images/uno.png" alt="">
                     <p>Одинарні пам'ятники</p>
                 </div>
-                <div class="item">
+                <div class="item" onclick="filterCatalog('double')">
                     <img src="/images/main_images/double.png" alt="">
                     <p>Подвійні пам'ятники</p>
                 </div>
-                <div class="item">
+                <div class="item" onclick="filterCatalog('triple')">
                     <img src="/images/main_images/triple.png" alt="">
                     <p>Потрійні пам'ятники</p>
                 </div>
-                <div class="item">
+                <div class="item" onclick="filterCatalog('child')">
                     <img src="/images/main_images/child.png" alt="">
                     <p>Дитячі пам'ятники</p>
                 </div>
-                <div class="item">
+                <div class="item" onclick="filterCatalog('others')">
                     <img src="/images/main_images/other.png" alt="">
                     <p>Інші вироби</p>
                 </div>
             </div>
+            
         </div>
 
         <div class="service">
@@ -83,4 +84,12 @@
                 </div>
             </div>
         </div>
+
+    <script>
+        function filterCatalog(filterValue) {
+            // Redirect to the catalog page with the filter parameter
+            window.location.href = `/catalog?filter=${filterValue}`;
+        }
+
+    </script>
 <%- include("components/footer.ejs") %>

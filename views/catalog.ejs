@@ -20,14 +20,38 @@
                             <p class="articul-text"><strong>Артикул:</strong>  <%= product.articul %></p>
                             <p class="name-text pricey-text"> <%= product.price %> грн</p>
                         </div>
-                        <button class="detail-btn">Детальніше</button>
+                        <form action="/detail" method="post">
+                            <button class="detail-btn" name="checkID" value="<%= product.id %>">Детальніше</button>
+                        </form>
                     </div>
                 </div>
         <% }); %>
     </div>
     <script>
-        document.querySelector('.filter').addEventListener('change', function () {
+        // Get the filter value from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filter = urlParams.get('filter');
+
+        // Set the select dropdown value to the filter value from the URL
+        const selectElement = document.querySelector('.filter');
+        if (filter) {
+            selectElement.value = filter; // Set the filter value to the select element
+        }
+
+        // Apply filtering logic based on the selected value from the URL or dropdown
+        if (filter) {
+            console.log('Filtering by:', filter);
+            filterProducts(filter); // Filter products based on the URL parameter
+        }
+
+        // Event listener for the select dropdown change
+        selectElement.addEventListener('change', function () {
             const filterValue = this.value; // Get the selected filter value
+            filterProducts(filterValue); // Apply filtering when the dropdown changes
+        });
+
+        // Function to filter products based on the selected value
+        function filterProducts(filterValue) {
             const products = document.querySelectorAll('.product'); // Get all products
 
             products.forEach(product => {
@@ -38,6 +62,7 @@
                     product.style.display = 'none'; // Hide product
                 }
             });
-        });
+        }
+
     </script>
 <%- include("components/footer.ejs") %>

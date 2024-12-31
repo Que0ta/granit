@@ -1,4 +1,6 @@
 <%- include("components/header.ejs") %>
+        <input type="hidden" id="photos-data" value='<%- JSON.stringify(photos) %>' />
+
         <div class="cardItem">
             <div class="cardGallery">
                 <img class="shown-picture" src="https://www.benchmarkemail.com/wp-content/uploads/2024/04/Places-to-Find-Email-Template-Images.jpg" alt="">
@@ -14,43 +16,39 @@
             </div>
 
             <div class="cardDetails">
-                <h1>Пам'ятник <%= type %></h1>
-                <h2 class="number">Номер: #<%= number %></h2>
-                <!-- <h2>характеристики:</h2>
-                <div class="characteristics">
-                    <p>Колір:</p>
-                    <p>Матеріал:</p>
-                </div> -->
+                <h1>Пам'ятник <%= name %></h1>
+                <h2 class="number">Артикул: <%= articul %></h2>
+
                 <div class="itemData">
-                    <div class="characteristics">
-                      <h3>ХАРАКТЕРИСТИКИ:</h3>
-                      <p>КОЛІР: <span>######</span></p>
-                      <p>МАТЕРІАЛ: <span>######</span></p>
+                    <!-- <div class="characteristics">
+                        <h3>ХАРАКТЕРИСТИКИ:</h3>
+                        <p>КОЛІР: <span><%= height %></span></p>
+                        <p>МАТЕРІАЛ: <span><%= width %></span></p>
+                    </div> -->
+  
+                    <div class="addition">
+                        <h3>Комплектація:</h3>
+                        <ul>
+                            <% components.forEach(function(component) { %>
+                                <li><%= component %></li>
+                            <% }); %>
+                        </ul>
                     </div>
 
-                    <!-- <div> </div> -->
-                  
-                    <!-- <div class="extras">
-                      <h3>ДОДАТКИ:</h3>
-                      <ul>
-                        <li>ВАЗА</li>
-                        <li>ПІДСВІЧНИК</li>
-                        <li>ІНШЕ ...</li>
-                      </ul>
-                    </div> -->
-                  
-                    <div class="dimensions">
-                      <h3>РОЗМІРИ:</h3>
-                      <p>ШИРИНА: <%= width %> см</p>
-                      <p>ВИСОТА: <%= height %> см</p>
-                      <p>ДОВЖИНА: <%= length %> см</p>
+                    <div class="addition">
+                        <h3>Додаткова вартість:</h3>
+                        <ul>
+                            <% extra_costs.forEach(function(extra, index) { %>
+                                <li><%= extra %> - <%= extra_cost_values[index] %> грн</li>
+                            <% }); %>
+                        </ul>
                     </div>
 
                     <div class="producing">
                         <h3>термін виготовлення:</h3>
                         <p>сезон (березень-жовтень) - 30 днів </p>
                         <p>несезон (листопад-лютий) - 15 днів</p>
-                    </div>    
+                    </div>  
                 </div>
 
                 <div class="downer">
@@ -59,31 +57,33 @@
                 </div>
                 <div class="downer">
                     <h3>ціна:</h3>
-                    <p class="number price"><%= price %> <span style="text-transform: lowercase;">грн<span></p>
+                    <p class="number price"><%= price %> <span style="text-transform: lowercase;">грн</span></p>
                 </div>
                 <div class="buttons">
                     <a class="buy" href="">замовити</a><br class="drop">
                     <a class="instruction" href="">виконання</a>
                 </div>
             </div>
+            
         </div>
-        <div class="lower-card">
-            <div class="addition">
+        <!-- <div class="lower-card"> -->
+            <!-- <div class="addition">
                 <h3>Комплектація:</h3>
                 <ul>
-                    <li>пункт 1</li>
-                    <li>пункт 2</li>
-                    <li>пункт 3</li>
+                    <% components.forEach(function(component) { %>
+                        <li><%= component %></li>
+                    <% }); %>
                 </ul>
-            </div>
-            <div class="addition">
+            </div> -->
+            <!-- <div class="addition">
                 <h3>Додаткова вартість:</h3>
                 <ul>
-                    <li>пункт 11</li>
-                    <li>пункт 2</li>
-                    <li>пункт 3</li>
+                    <% extra_costs.forEach(function(extra, index) { %>
+                        <li><%= extra %> - <%= extra_cost_values[index] %> грн</li>
+                    <% }); %>
                 </ul>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
         <script src="/js/fullscale.js"></script>
+        <script src="/js/carousel.js"></script>
 <%- include("components/footer.ejs") %>
