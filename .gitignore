@@ -2,3 +2,4 @@ node_modules
 images/logo_sample/
 images/tested/
 .env
+mail.js

@@ -1,0 +1,57 @@
+<%- include("components/header.ejs") %>
+<link rel="stylesheet" href="/css/order.css"/>
+
+    <h1 style="text-align: center; font-size: 32px;">Вибраний виріб</h1>
+    <div class="chosen-item">
+        <p><strong>Артикул:</strong> <%= articul %></p>
+        <p><strong>Ціна:</strong> <%= price %> грн</p>
+
+        <h2>Комлектація:</h2>
+        <ul>
+            <% components.forEach(function(component) { %>
+            <li><%= component %></li>
+            <% }); %>
+        </ul>
+
+        <h2>Додаткова вартість послуг:</h2>
+        <ul>
+            <% extra_costs.forEach(function(cost, index) { %>
+            <li><%= cost %>: <%= extra_cost_values[index] %> грн</li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <div class="form-aliner">
+        <form action="/send?articul=<%= articul %>" id="contactForm" method="post">
+            <label for="name">Ваше ім'я:</label>
+            <input type="text" id="name" name="name" required placeholder="Введіть ваше ім'я">
+
+            <label for="phone">Номер телефону:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Приклад: +380123456789" pattern="^\+380\d{9}$" title="Перевірте правильність номеру!">
+
+            <label for="comment">*Коментар (макс. 250 символів):</label>
+            <textarea id="comment" name="comment" rows="5" maxlength="250" placeholder="Коментар до замовлення"></textarea>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </div>
+
+    <script>
+        const phoneInput = document.getElementById('phone');
+    
+        phoneInput.addEventListener('input', () => {
+          const value = phoneInput.value.replace(/\D/g, ''); // Remove non-digit characters
+          const formattedValue = value
+            .replace(/^(\d{1,3})/, '+$1') // Country code
+            .replace(/(\d{3})(\d{1,3})/, '$1$2') // Area code
+            .replace(/(\d{6})(\d{1,3})$/, '$1$2'); // Rest of the number
+    
+          phoneInput.value = formattedValue;
+        });
+    
+        document.getElementById('phoneForm').addEventListener('submit', (event) => {
+          event.preventDefault();
+          alert(`Phone number submitted: ${phoneInput.value}`);
+        });
+      </script>
+<%- include("components/footer.ejs") %>

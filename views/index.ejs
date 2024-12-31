@@ -1,9 +1,13 @@
 <%- include("components/header.ejs") %>
+        <div id="success-popup">
+            Замовлення успішно оформлено!
+        </div>
+
         <div class="about">
             <div class="text">
                 <h1>Про нас</h1>
                 <p>Ми спеціалізуємось на виготовленні пам'ятників та інших виробів з граніту, поєднуючи високу якість матеріалів та майстерність обробки. Ми створюємо вироби, що зберігають пам'ять про важливі моменти життя, гарантуючи довговічність та естетичний вигляд на роки.</p>
-                <a class="details" href="">Детальніше</a>
+                <a class="details" href="/catalog">Детальніше</a>
             </div>
         </div>
 
@@ -91,5 +95,22 @@
             window.location.href = `/catalog?filter=${filterValue}`;
         }
 
+    </script>
+
+    <script>
+        // Check for success query parameter in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+
+        if (success === '1') {
+        // Show the popup
+        const popup = document.getElementById('success-popup');
+        popup.style.display = 'block';
+
+        // Hide the popup after 5 seconds
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 5000); // 5000ms = 5 seconds
+        }
     </script>
 <%- include("components/footer.ejs") %>
