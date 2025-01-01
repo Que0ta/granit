@@ -26,8 +26,8 @@ const pool = new Pool({
     password: process.env.DATABASE_PASSWORD,
     port: process.env.PG_PORT,
     ssl: {
-        rejectUnauthorized: true,
-        ca: fs.readFileSync('/etc/secrets/eu-north-1-bundle.pem').toString() 
+        rejectUnauthorized: false,
+        // ca: fs.readFileSync('/etc/secrets/eu-north-1-bundle.pem').toString() 
     }
 });
 

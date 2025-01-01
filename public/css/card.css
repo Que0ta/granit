@@ -23,8 +23,8 @@
 }
 
 .cardGallery img{
-    width: 660px;
-    height: 430px;
+    width: 560px;
+    height: 630px;
 }
 
 .number{
@@ -145,7 +145,7 @@
 
     .cardGallery img{
         width: 460px;
-        height: 310px;
+        height: 540px;
     }
     
 }
@@ -223,7 +223,7 @@
 
     .cardGallery .shown-picture{
         width: 260px;
-        height: 210px;
+        height: 330px;
     }
 
     .cardGallery{
@@ -402,4 +402,9 @@
 
 .no-bg{
     background-color: none !important;
+}
+
+.product:hover{
+    transform: scale(1.04);
+    transition: 0.4s all linear;
 }
