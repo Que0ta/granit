@@ -767,9 +767,33 @@ footer > *{
     #success-popup{
         font-size: 0.9rem;
     }
+
+    .question{
+        padding: 1.6rem;
+        border-radius: 22px;
+    }
+
+    .question h3{
+        font-size: 1.45rem;
+    }
 }
 
 .menu > *:hover{
     transform: scale(1.08);
     transition: 0.4s all linear;
+}
+
+.information .question, .question h3{
+    text-transform: none;
+}
+
+@media (max-width: 420px) {
+    .question h3{
+        font-size: 0.85rem;
+    }
+
+    .question{
+        padding: 0.85rem;
+        border-radius: 15px;
+    }
 }
